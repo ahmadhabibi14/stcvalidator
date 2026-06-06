@@ -1,4 +1,4 @@
-module stcvalidator
+module github.com/ahmadhabibi14/stcvalidator
 
 go 1.25.7
 

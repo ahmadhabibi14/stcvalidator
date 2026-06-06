@@ -21,17 +21,17 @@ type User struct {
 func main() {
   myUser := User{
     Name: "Thor",
-    Age: 1500
+    Age: 1500,
   }
 
   err := stcvalidator.Validate(myUser, stcvalidator.MapErrMsg{
     "Name": {
-      "required": "Name cannot be empty"
+      "required": "Name cannot be empty",
     },
     "Age": {
       "required": "Age cannot be empty",
-      "max": "Maximal age is 200 year old"
-    }
+      "max": "Maximal age is 200 year old",
+    },
   })
 
   if err != nil {
