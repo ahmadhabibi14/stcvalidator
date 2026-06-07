@@ -13,6 +13,8 @@ import (
   "github.com/ahmadhabibi14/stcvalidator"
 )
 
+var validate = stcvalidator.New()
+
 type User struct {
   Name  string  `json:"name" validate:"required"`
   Age   int64   `json:"age" validate:"required,max=200"`
@@ -24,7 +26,7 @@ func main() {
     Age: 1500,
   }
 
-  err := stcvalidator.Validate(myUser, stcvalidator.MapErrMsg{
+  err := validate.StructWithMapErr(myUser, stcvalidator.MapErrMsg{
     "Name": {
       "required": "Name cannot be empty",
     },
